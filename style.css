@@ -1,0 +1,128 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 1200px; /* Wider container */
+    max-height: 95vh;
+    overflow-y: auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Three-column grid layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between inputs */
+}
+
+label {
+    font-size: 15px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    border-color: #2ebf91;
+    outline: none;
+}
+
+input[readonly] {
+    background-color: #f4f4f4;
+    color: #999;
+}
+
+.full-width {
+    grid-column: span 3; /* Full width for specific inputs */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ebf91;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #27a47c;
+    box-shadow: 0 10px 25px rgba(46, 191, 145, 0.3);
+}
+
+button.download-btn {
+    background-color: #8360c3;
+    margin-top: 10px;
+}
+
+button.download-btn:hover {
+    background-color: #6b46b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+}
